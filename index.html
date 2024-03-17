@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <title>💎 Salesboard 💎</title>
+    </head>
+    <body>
+        <header>
+            <button type="button"
+                data-theme-toggle
+                class="theme-toggle display-block-right"
+                aria-label="Toggle light theme"
+                >Toggle light theme</button> 
+        </header>
+        <div class="salesboard-container">
+            <h1>💎 Salesboard 💎</h1>
+            <img 
+            class="profile display-block-center" 
+            src="./images/TigerMillionaire.jpg"
+            aria-label="Tiger Millionaire's profile photo">
+            <div class="products">
+                <button type="button"
+                id="product-burger" 
+                aria-label="Product burger"
+                >🍔</button>
+                <button type="button"
+                id="product-cookie" 
+                aria-label="Product cookie"
+                >🍪</button>
+            </div>
+            <div class="data-box">
+                <h2>Live Sales - 
+                    <span id="live-sales-count">0</span>
+                </h2>
+                <p id="live-sales"></p>
+            </div>
+            <div class="data-box">
+                <h2>Live Achievements - 
+                    <span id="live-achievements-count">0</span>
+                </h2>
+                <p id="live-achievements"></p>
+            </div>
+            <div class="data-box-flex">
+                <div class="data-box">
+                    <h2>Total Revenue</h2>
+                    <p id="total-revenue">$ 0</p>
+                </div>
+                <div class="data-box">
+                    <h2>Total Commision</h2>
+                    <p id="total-commision">$ 0</p>
+                </div>
+            </div>
+            <div class="reset-box">
+                <button type="button"
+                class="display-block-center"
+                id="reset"
+                aria-label="Reset data"
+                >RESET</button>
+            </div>
+        </div>
+        <script src="index.js" type="module"></script>
+        <script src="theme.js" type="module"></script>
+    </body>
+</html>
