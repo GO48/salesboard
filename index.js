@@ -12,6 +12,7 @@ const productCookie = {
 
 let sales = []
 let achievements = []
+let achievementsRules = "" 
 let totalRevenue = 0
 let totalCommision = 0
 
@@ -22,6 +23,7 @@ const liveSalesEl = document.getElementById("live-sales")
 const liveSalesCountEl = document.getElementById("live-sales-count")
 const liveAchievementsEl = document.getElementById("live-achievements")
 const liveAchievementsCountEl = document.getElementById("live-achievements-count")
+const achievementsRulesEl = document.getElementById("achievements_rules")
 const totalRevenueEl = document.getElementById("total-revenue")
 const totalCommisionEl = document.getElementById("total-commision")
 
@@ -29,10 +31,12 @@ const salesFromLocalStorage = JSON.parse( localStorage.getItem("sales") )
 
 if (salesFromLocalStorage) {
     for (let i = 0; i < salesFromLocalStorage.length; i++) {
-        if (salesFromLocalStorage[i] === "🍔")
+        if (salesFromLocalStorage[i] === "🍔"){
             newSale(productBurger)
-        if (salesFromLocalStorage[i] === "🍪")
+        }
+        if (salesFromLocalStorage[i] === "🍪"){
             newSale(productCookie)
+        }
     }
     render()
 }
@@ -57,6 +61,7 @@ resetButtonEl.addEventListener('click', function(){
     localStorage.removeItem("sales")
     sales = []
     achievements = []
+    achievementsRules = "" 
     totalRevenue = 0
     totalCommision = 0
     revenueAchievementFlag = true
@@ -72,31 +77,41 @@ function newSale(product){
 }
 
 function checkAchievement(){
-    if (sales.length === 1)
+    if (sales.length === 1){
         achievements.push("🔔")
-    if (sales.length === 15)
+        achievementsRules += "🔔 You made your 1st sale! "
+    }
+    if (sales.length === 15){
         achievements.push("🏆")
+        achievementsRules += "🏆 You reached $ 2500 in revenue! " 
+    }
     if (totalRevenue >= 2500 && revenueAchievementFlag){
         achievements.push("💰")
         revenueAchievementFlag = false
+        achievementsRules += "💰 You made your 15st sale! "
+
     }
     if (totalCommision >= 1000 && commisionAchievementFlag){
         achievements.push("🤑")
         commisionAchievementFlag = false
+        achievementsRules += "🤑 You reached $ 1000 in commision! " 
     }
 }
 
 function render(){
     liveSalesEl.textContent = ""
-    for (let i = 0; i < sales.length; i++) 
+    for (let i = 0; i < sales.length; i++){
         liveSalesEl.textContent += sales[i]
+    }
     liveSalesCountEl.textContent = sales.length
     
     liveAchievementsEl.textContent = ""
-    for (let i = 0; i < achievements.length; i++) 
+    for (let i = 0; i < achievements.length; i++) {
         liveAchievementsEl.textContent += achievements[i]
+    }
     liveAchievementsCountEl.textContent = achievements.length
+    achievementsRulesEl.textContent = achievementsRules
 
-    totalRevenueEl.textContent = totalRevenue
-    totalCommisionEl.textContent = totalCommision
+    totalRevenueEl.textContent = "$ " + totalRevenue
+    totalCommisionEl.textContent = "$ " + totalCommision
 }

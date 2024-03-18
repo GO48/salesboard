@@ -15,52 +15,59 @@
                 >Toggle light theme</button> 
         </header>
         <div class="salesboard-container">
-            <h1>💎 Salesboard 💎</h1>
-            <img 
-            class="profile display-block-center" 
-            src="./images/TigerMillionaire.jpg"
-            aria-label="Tiger Millionaire's profile photo">
-            <div class="products">
-                <button type="button"
-                id="product-burger" 
-                aria-label="Product burger"
-                >🍔</button>
-                <button type="button"
-                id="product-cookie" 
-                aria-label="Product cookie"
-                >🍪</button>
-            </div>
-            <div class="data-box">
-                <h2>Live Sales - 
-                    <span id="live-sales-count">0</span>
-                </h2>
-                <p id="live-sales"></p>
-            </div>
-            <div class="data-box">
-                <h2>Live Achievements - 
-                    <span id="live-achievements-count">0</span>
-                </h2>
-                <p id="live-achievements"></p>
-            </div>
-            <div class="data-box-flex">
-                <div class="data-box">
-                    <h2>Total Revenue</h2>
-                    <p id="total-revenue">$ 0</p>
+            <main>
+                <h1>💎 Salesboard 💎</h1>
+                <img 
+                class="profile display-block-center" 
+                src="./assets/images/TigerMillionaire.jpg"
+                alt="Tiger Millionaire's profile photo">
+                <div class="products">
+                    <button type="button"
+                    id="product-burger" 
+                    title="Add a product burger"
+                    aria-label="Product burger"
+                    >🍔</button>
+                    <button type="button"
+                    id="product-cookie" 
+                    title="Add a product cookie"
+                    aria-label="Product cookie"
+                    >🍪</button>
                 </div>
                 <div class="data-box">
-                    <h2>Total Commision</h2>
-                    <p id="total-commision">$ 0</p>
+                    <h2>Live Sales - 
+                        <span id="live-sales-count">0</span>
+                    </h2>
+                    <p id="live-sales"></p>
                 </div>
-            </div>
-            <div class="reset-box">
-                <button type="button"
-                class="display-block-center"
-                id="reset"
-                aria-label="Reset data"
-                >RESET</button>
-            </div>
+                <div class="data-box">
+                    <h2>Live Achievements - 
+                        <span id="live-achievements-count">0</span>
+                    </h2>
+                    <p id="live-achievements"></p>
+                </div>
+                <div class="achievements_rules">
+                    <p id="achievements_rules"></p>
+                </div>
+                <div class="data-box-flex">
+                    <div class="data-box">
+                        <h2>Total Revenue</h2>
+                        <p id="total-revenue">$ 0</p>
+                    </div>
+                    <div class="data-box">
+                        <h2>Total Commision</h2>
+                        <p id="total-commision">$ 0</p>
+                    </div>
+                </div>
+                <div class="reset-box">
+                    <button type="button"
+                    class="display-block-center"
+                    id="reset"
+                    aria-label="Reset data"
+                    >RESET</button>
+                </div>
+            </main>
         </div>
-        <script src="index.js" type="module"></script>
-        <script src="theme.js" type="module"></script>
+        <script type="text/javascript" src="index.js" ></script>
+        <script type="text/javascript" src="theme.js" ></script>
     </body>
 </html>
