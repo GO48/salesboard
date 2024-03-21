@@ -55,7 +55,7 @@ I also learned from building:
 - [x] using {} in if statements and loops to make the code more readable and less error-prone. It's a good practice to use braces even for single-line blocks.
 - [ ] theme and “flash of incorrect theme” (FOIT).
 Our theme.js script saves the selected theme to localStorage when the toggle takes place. In other words, when the page is reloaded, the script fetches the choice from localStorage and applies it. JavaScript is often executed after CSS, so this approach is prone to a “flash of incorrect theme” (FOIT).
-Placing this theme-based script in the `<head>` before the stylesheets **should** fix the problem.
     * https://stevenwoodson.com/blog/implementing-dark-mode/
     * https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/
     * https://chrismorgan.info/blog/dark-theme-implementation/
+    * https://lukelowrey.com/css-variable-theme-switcher/https://lukelowrey.com/css-variable-theme-switcher/
